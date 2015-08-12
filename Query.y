@@ -12,6 +12,8 @@ import Data.Char
 	OR		{ TokenOR }
 	AND 	{ TokenAND }
 	word	{ TokenWord $$ }
+  '+'   { TokenPlus }
+  '-'   { TokenMinus }
   '(' 	{ TokenLParen }
   '"'   { TokenQuotes }
   ')' 	{ TokenRParen }
@@ -26,7 +28,11 @@ import Data.Char
 Query   : Clause          { [$1] }
         | Query Clause    { $2 : $1 }
 
-Clause  : Term            { $1 }
+Clause  : '+' Pred        { Clause And $2 }
+        | '-' Pred        { Clause Not $2 }
+        | Pred            { Clause Or $1 }
+
+Pred    : Term            { $1 }
         | '(' Query ')'   { BooleanQuery $2 }
         | '"' Words '"'   { PhraseQuery $2 }
 
@@ -39,9 +45,11 @@ Term    : word            { TermQuery $1 }
 parseError :: [Token] -> a
 parseError _ = error "Parse error"
 
-data Query = TermQuery String | BooleanQuery [Query] | PhraseQuery [String] deriving Show
+data Op = And | Or | Not deriving Show
+data Clause = Clause Op Query deriving Show
+data Query = TermQuery String | BooleanQuery [Clause] | PhraseQuery [String] deriving Show
 
-data Token = TokenOR | TokenAND | TokenWord String | TokenLParen | TokenRParen | TokenQuotes deriving Show
+data Token = TokenOR | TokenAND | TokenWord String | TokenPlus | TokenMinus | TokenLParen | TokenRParen | TokenQuotes deriving Show
 
 lexer :: String -> [Token]
 lexer [] = []
@@ -49,6 +57,8 @@ lexer (c:cs)
       | isSpace c = lexer cs
       | isAlpha c = lexVar (c:cs)
 lexer ('"':cs) = TokenQuotes : lexer cs
+lexer ('+':cs) = TokenPlus : lexer cs
+lexer ('-':cs) = TokenMinus : lexer cs
 lexer ('(':cs) = TokenLParen : lexer cs
 lexer (')':cs) = TokenRParen : lexer cs
 

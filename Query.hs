@@ -5,76 +5,112 @@ import Data.Char
 
 -- parser produced by Happy Version 1.19.0
 
-data HappyAbsSyn t4 t5 t6 t7
+data HappyAbsSyn t4 t5 t6 t7 t8
 	= HappyTerminal (Token)
 	| HappyErrorToken Int
 	| HappyAbsSyn4 t4
 	| HappyAbsSyn5 t5
 	| HappyAbsSyn6 t6
 	| HappyAbsSyn7 t7
+	| HappyAbsSyn8 t8
 
-action_0 (10) = happyShift action_4
 action_0 (11) = happyShift action_5
 action_0 (12) = happyShift action_6
-action_0 (4) = happyGoto action_7
+action_0 (13) = happyShift action_7
+action_0 (14) = happyShift action_8
+action_0 (15) = happyShift action_9
+action_0 (4) = happyGoto action_10
 action_0 (5) = happyGoto action_2
-action_0 (7) = happyGoto action_3
+action_0 (6) = happyGoto action_3
+action_0 (8) = happyGoto action_4
 action_0 _ = happyFail
 
-action_1 (10) = happyShift action_4
 action_1 (11) = happyShift action_5
 action_1 (12) = happyShift action_6
+action_1 (13) = happyShift action_7
+action_1 (14) = happyShift action_8
+action_1 (15) = happyShift action_9
 action_1 (5) = happyGoto action_2
-action_1 (7) = happyGoto action_3
+action_1 (6) = happyGoto action_3
+action_1 (8) = happyGoto action_4
 action_1 _ = happyFail
 
 action_2 _ = happyReduce_1
 
-action_3 _ = happyReduce_3
+action_3 _ = happyReduce_5
 
-action_4 _ = happyReduce_8
+action_4 _ = happyReduce_6
 
-action_5 (10) = happyShift action_4
-action_5 (11) = happyShift action_5
-action_5 (12) = happyShift action_6
-action_5 (4) = happyGoto action_11
-action_5 (5) = happyGoto action_2
-action_5 (7) = happyGoto action_3
-action_5 _ = happyFail
+action_5 _ = happyReduce_11
 
-action_6 (10) = happyShift action_10
-action_6 (6) = happyGoto action_9
+action_6 (11) = happyShift action_5
+action_6 (14) = happyShift action_8
+action_6 (15) = happyShift action_9
+action_6 (6) = happyGoto action_16
+action_6 (8) = happyGoto action_4
 action_6 _ = happyFail
 
-action_7 (10) = happyShift action_4
 action_7 (11) = happyShift action_5
-action_7 (12) = happyShift action_6
-action_7 (14) = happyAccept
-action_7 (5) = happyGoto action_8
-action_7 (7) = happyGoto action_3
+action_7 (14) = happyShift action_8
+action_7 (15) = happyShift action_9
+action_7 (6) = happyGoto action_15
+action_7 (8) = happyGoto action_4
 action_7 _ = happyFail
 
-action_8 _ = happyReduce_2
+action_8 (11) = happyShift action_5
+action_8 (12) = happyShift action_6
+action_8 (13) = happyShift action_7
+action_8 (14) = happyShift action_8
+action_8 (15) = happyShift action_9
+action_8 (4) = happyGoto action_14
+action_8 (5) = happyGoto action_2
+action_8 (6) = happyGoto action_3
+action_8 (8) = happyGoto action_4
+action_8 _ = happyFail
 
-action_9 (10) = happyShift action_13
-action_9 (12) = happyShift action_14
+action_9 (11) = happyShift action_13
+action_9 (7) = happyGoto action_12
 action_9 _ = happyFail
 
-action_10 _ = happyReduce_6
+action_10 (11) = happyShift action_5
+action_10 (12) = happyShift action_6
+action_10 (13) = happyShift action_7
+action_10 (14) = happyShift action_8
+action_10 (15) = happyShift action_9
+action_10 (17) = happyAccept
+action_10 (5) = happyGoto action_11
+action_10 (6) = happyGoto action_3
+action_10 (8) = happyGoto action_4
+action_10 _ = happyFail
 
-action_11 (10) = happyShift action_4
-action_11 (11) = happyShift action_5
-action_11 (12) = happyShift action_6
-action_11 (13) = happyShift action_12
-action_11 (5) = happyGoto action_8
-action_11 (7) = happyGoto action_3
-action_11 _ = happyFail
+action_11 _ = happyReduce_2
 
-action_12 _ = happyReduce_4
+action_12 (11) = happyShift action_18
+action_12 (15) = happyShift action_19
+action_12 _ = happyFail
 
-action_13 _ = happyReduce_7
+action_13 _ = happyReduce_9
 
-action_14 _ = happyReduce_5
+action_14 (11) = happyShift action_5
+action_14 (12) = happyShift action_6
+action_14 (13) = happyShift action_7
+action_14 (14) = happyShift action_8
+action_14 (15) = happyShift action_9
+action_14 (16) = happyShift action_17
+action_14 (5) = happyGoto action_11
+action_14 (6) = happyGoto action_3
+action_14 (8) = happyGoto action_4
+action_14 _ = happyFail
+
+action_15 _ = happyReduce_4
+
+action_16 _ = happyReduce_3
+
+action_17 _ = happyReduce_7
+
+action_18 _ = happyReduce_10
+
+action_19 _ = happyReduce_8
 
 happyReduce_1 = happySpecReduce_1  4 happyReduction_1
 happyReduction_1 (HappyAbsSyn5  happy_var_1)
@@ -91,69 +127,94 @@ happyReduction_2 (HappyAbsSyn5  happy_var_2)
 	)
 happyReduction_2 _ _  = notHappyAtAll 
 
-happyReduce_3 = happySpecReduce_1  5 happyReduction_3
-happyReduction_3 (HappyAbsSyn7  happy_var_1)
-	 =  HappyAbsSyn5
-		 (happy_var_1
-	)
-happyReduction_3 _  = notHappyAtAll 
-
-happyReduce_4 = happySpecReduce_3  5 happyReduction_4
-happyReduction_4 _
-	(HappyAbsSyn4  happy_var_2)
+happyReduce_3 = happySpecReduce_2  5 happyReduction_3
+happyReduction_3 (HappyAbsSyn6  happy_var_2)
 	_
 	 =  HappyAbsSyn5
-		 (BooleanQuery happy_var_2
+		 (Clause And happy_var_2
 	)
-happyReduction_4 _ _ _  = notHappyAtAll 
+happyReduction_3 _ _  = notHappyAtAll 
 
-happyReduce_5 = happySpecReduce_3  5 happyReduction_5
-happyReduction_5 _
-	(HappyAbsSyn6  happy_var_2)
+happyReduce_4 = happySpecReduce_2  5 happyReduction_4
+happyReduction_4 (HappyAbsSyn6  happy_var_2)
 	_
 	 =  HappyAbsSyn5
-		 (PhraseQuery happy_var_2
+		 (Clause Not happy_var_2
 	)
-happyReduction_5 _ _ _  = notHappyAtAll 
+happyReduction_4 _ _  = notHappyAtAll 
+
+happyReduce_5 = happySpecReduce_1  5 happyReduction_5
+happyReduction_5 (HappyAbsSyn6  happy_var_1)
+	 =  HappyAbsSyn5
+		 (Clause Or happy_var_1
+	)
+happyReduction_5 _  = notHappyAtAll 
 
 happyReduce_6 = happySpecReduce_1  6 happyReduction_6
-happyReduction_6 (HappyTerminal (TokenWord happy_var_1))
+happyReduction_6 (HappyAbsSyn8  happy_var_1)
 	 =  HappyAbsSyn6
-		 ([happy_var_1]
+		 (happy_var_1
 	)
 happyReduction_6 _  = notHappyAtAll 
 
-happyReduce_7 = happySpecReduce_2  6 happyReduction_7
-happyReduction_7 (HappyTerminal (TokenWord happy_var_2))
-	(HappyAbsSyn6  happy_var_1)
+happyReduce_7 = happySpecReduce_3  6 happyReduction_7
+happyReduction_7 _
+	(HappyAbsSyn4  happy_var_2)
+	_
 	 =  HappyAbsSyn6
+		 (BooleanQuery happy_var_2
+	)
+happyReduction_7 _ _ _  = notHappyAtAll 
+
+happyReduce_8 = happySpecReduce_3  6 happyReduction_8
+happyReduction_8 _
+	(HappyAbsSyn7  happy_var_2)
+	_
+	 =  HappyAbsSyn6
+		 (PhraseQuery happy_var_2
+	)
+happyReduction_8 _ _ _  = notHappyAtAll 
+
+happyReduce_9 = happySpecReduce_1  7 happyReduction_9
+happyReduction_9 (HappyTerminal (TokenWord happy_var_1))
+	 =  HappyAbsSyn7
+		 ([happy_var_1]
+	)
+happyReduction_9 _  = notHappyAtAll 
+
+happyReduce_10 = happySpecReduce_2  7 happyReduction_10
+happyReduction_10 (HappyTerminal (TokenWord happy_var_2))
+	(HappyAbsSyn7  happy_var_1)
+	 =  HappyAbsSyn7
 		 (happy_var_2 : happy_var_1
 	)
-happyReduction_7 _ _  = notHappyAtAll 
+happyReduction_10 _ _  = notHappyAtAll 
 
-happyReduce_8 = happySpecReduce_1  7 happyReduction_8
-happyReduction_8 (HappyTerminal (TokenWord happy_var_1))
-	 =  HappyAbsSyn7
+happyReduce_11 = happySpecReduce_1  8 happyReduction_11
+happyReduction_11 (HappyTerminal (TokenWord happy_var_1))
+	 =  HappyAbsSyn8
 		 (TermQuery happy_var_1
 	)
-happyReduction_8 _  = notHappyAtAll 
+happyReduction_11 _  = notHappyAtAll 
 
 happyNewToken action sts stk [] =
-	action 14 14 notHappyAtAll (HappyState action) sts stk []
+	action 17 17 notHappyAtAll (HappyState action) sts stk []
 
 happyNewToken action sts stk (tk:tks) =
 	let cont i = action i i tk (HappyState action) sts stk tks in
 	case tk of {
-	TokenOR -> cont 8;
-	TokenAND -> cont 9;
-	TokenWord happy_dollar_dollar -> cont 10;
-	TokenLParen -> cont 11;
-	TokenQuotes -> cont 12;
-	TokenRParen -> cont 13;
+	TokenOR -> cont 9;
+	TokenAND -> cont 10;
+	TokenWord happy_dollar_dollar -> cont 11;
+	TokenPlus -> cont 12;
+	TokenMinus -> cont 13;
+	TokenLParen -> cont 14;
+	TokenQuotes -> cont 15;
+	TokenRParen -> cont 16;
 	_ -> happyError' (tk:tks)
 	}
 
-happyError_ 14 tk tks = happyError' tks
+happyError_ 17 tk tks = happyError' tks
 happyError_ _ tk tks = happyError' (tk:tks)
 
 newtype HappyIdentity a = HappyIdentity a
@@ -183,9 +244,11 @@ happySeq = happyDontSeq
 parseError :: [Token] -> a
 parseError _ = error "Parse error"
 
-data Query = TermQuery String | BooleanQuery [Query] | PhraseQuery [String] deriving Show
+data Op = And | Or | Not deriving Show
+data Clause = Clause Op Query deriving Show
+data Query = TermQuery String | BooleanQuery [Clause] | PhraseQuery [String] deriving Show
 
-data Token = TokenOR | TokenAND | TokenWord String | TokenLParen | TokenRParen | TokenQuotes deriving Show
+data Token = TokenOR | TokenAND | TokenWord String | TokenPlus | TokenMinus | TokenLParen | TokenRParen | TokenQuotes deriving Show
 
 lexer :: String -> [Token]
 lexer [] = []
@@ -193,6 +256,8 @@ lexer (c:cs)
       | isSpace c = lexer cs
       | isAlpha c = lexVar (c:cs)
 lexer ('"':cs) = TokenQuotes : lexer cs
+lexer ('+':cs) = TokenPlus : lexer cs
+lexer ('-':cs) = TokenMinus : lexer cs
 lexer ('(':cs) = TokenLParen : lexer cs
 lexer (')':cs) = TokenRParen : lexer cs
 
