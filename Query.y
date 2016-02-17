@@ -20,11 +20,6 @@ import Data.Char
 
 %%
 
--- ciao a tutti : BooleanQuery(TermQuery(ciao), TQ(a), TQ(tutti))
--- ciao (a tutti): BooleanQuery(TQ(ciao), BooleanQuery(TQ(a) ,TQ(tutti)))
--- ciao ema: BooleanQuery(TQ(ciao), TQ(ema))
--- ciao (ema): BooleanQuery(TQ(ciao), TQ(ema))
-
 Query   : Clause          { [$1] }
         | Query Clause    { $2 : $1 }
 

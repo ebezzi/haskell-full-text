@@ -30,3 +30,8 @@ enum cursor = nextBatch cursor >>= \res -> case res of
 
 printDocs :: String -> [Document] -> Action IO ()
 printDocs title docs = liftIO $ putStrLn title >> mapM_ (print . include ["_id"]) docs
+
+
+
+
+enum :: Cursor -> 

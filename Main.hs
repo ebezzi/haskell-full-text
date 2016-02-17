@@ -17,16 +17,6 @@ module Main where
   --expl (BooleanQuery xs) = all (traverse s) [q | Clause And q <- xs ] && any (traverse s) [q | Clause Or q <- xs ] && not all (traverse s) [q | Clause Not q <- xs ]
 
   main = 
-    --let query = (parse "(malpensa linate) +vado")
-    print $ traverse "vado a malpensa e anche a linate" (parse "  (malpensa linate) +\"anche ah\"   ")
+    --print $ traverse "vado a malpensa e anche a linate" (parse "  (malpensa linate) +\"anche ah\"   ")
 
-    --print $ expl $ parse "+Malpensa +Orio -Linate"
-
-    -- Clause And Malpensa, Clause And Linate
-    -- Clause Or Malpensa, Clause Not Linate
-
-
-
-    -- [Clause] -> 
-
-
+    
